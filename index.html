@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Rescue Organization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pet Rescue Organization</h1>
+        <nav>
+            <ul>
+                <li><a href="#adopt">Adopt a Pet</a></li>                 
+                <li><a href="#help">How to Help</a></li>                 
+                <li><a href="#stories">Success Stories</a></li>                 
+                <li><a href="#contact">Contact Us</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero">
+                <img src="hero.png" alt="Hero Image" class="hero-image">
+                <h2>Rescue, Love, Adopt!</h2>
+                <p>Join us in giving pets a second chance at life.</p>
+                <div class="cta-buttons">
+                    <a href="#adopt" class="cta-button">Adopt</a>
+                    <a href="#help" class="cta-button">Donate</a>
+                    <a href="#help" class="cta-button">Volunteer</a>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="adopt">
+            <h2>Adoptable Pets</h2>
+            <div class="pet-listing">
+                <div class="pet">
+                    <img src="https://media.istockphoto.com/id/543600370/photo/little-puppies-in-the.jpg?s=612x612&w=0&k=20&c=03CI6-4dBFgd21RwGwdOxJqyhT73Wwd71NH7x7gF3bo=" alt="Pet Name">
+                    <h3>Buddy</h3>
+                    <p>Breed: Labrador | Age: 3 years</p>
+                    <p>Description: Friendly and energetic.</p>
+                    <a href="#adoption-application" class="apply-button">Apply for Adoption</a>
+                </div>
+                <!-- Repeat for more pets -->
+            </div>
+        </section>
+
+        <section id="stories">
+            <h2>Success Stories</h2>
+            <div class="story">
+                <h3>Happy Ending: Bella</h3>
+                <p>Bella found her forever home after being rescued!</p>
+                <img src="https://media.istockphoto.com/id/1254804917/photo/young-woman-in-animal-shelter.jpg?s=612x612&w=0&k=20&c=3vDzmwAqTvDpdhqaQ25Zt6N1FyjU5tdr-w7Y7FqOb0g=" alt="Bella">
+            </div>
+            <!-- Repeat for more stories -->
+        </section>
+
+        <section id="help">
+            <h2>How to Help</h2>
+            <h3>Donation Options</h3>
+            <p>Support us by donating money, supplies, or your time!</p>
+            <h3>Volunteer Opportunities</h3>
+            <p>Join us as a volunteer to help our furry friends.</p>
+        </section>
+
+        <section id="resources">
+            <h2>Pet Care Resources</h2>
+            <p>Find articles and tips on caring for your pets.</p>
+            <ul>
+                <li><a href="#">Training Tips</a></li>
+                <li><a href="#">Health Care</a></li>
+                <li><a href="#">Local Services</a></li>
+            </ul>
+        </section>
+
+        <section id="events">
+            <h2>Events Calendar</h2>
+            <p>Check out our upcoming fundraisers and adoption events!</p>
+            <p>RSVP for events <a href="#rsvp-form">here</a>.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <p>Follow us on social media!</p>
+        </section>
+
+        <section id="newsletter">
+            <h2>Newsletter Signup</h2>
+            <form>
+                <label for="email-newsletter">Subscribe:</label>
+                <input type="email" id="email-newsletter" name="email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Read our latest updates and pet care tips.</p>
+            <!-- Blog posts can be added here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pet Rescue Organization. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor click behavior
+                const targetId = this.getAttribute('href'); // Get the target section ID
+
+                // Smooth scroll to the target section
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

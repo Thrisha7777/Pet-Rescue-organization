@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet - Pet Rescue Organization</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pet Rescue Organization</h1>
+        <nav>
+            <ul>
+                <li><a href="adopt.html">Adopt a Pet</a></li>
+                <li><a href="help.html">How to Help</a></li>
+                <li><a href="stories.html">Success Stories</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Adoptable Pets</h2>
+        <div class="pet-listing">
+            <div class="pet">
+                <img src="https://media.istockphoto.com/id/543600370/photo/little-puppies-in-the.jpg?s=612x612&w=0&k=20&c=03CI6-4dBFgd21RwGwdOxJqyhT73Wwd71NH7x7gF3bo=" alt="Buddy">
+                <h3>Buddy</h3>
+                <p>Breed: Labrador | Age: 3 years</p>
+                <p>Description: Friendly and energetic.</p>
+                <a href="#" class="apply-button" onclick="openApplicationForm('Buddy')">Apply for Adoption</a>
+            </div>
+            <!-- Repeat for more pets -->
+        </div>
+    </main>
+
+    <!-- Modal for Application Form -->
+    <div id="adoptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeApplicationForm()">&times;</span>
+            <h3>Adoption Application</h3>
+            <p>You're applying to adopt: <span id="petName"></span></p>
+            <form id="adoptionForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br><br>
+                <label for="message">Why do you want to adopt this pet?</label><br>
+                <textarea id="message" rows="4" required></textarea><br><br>
+                <button type="button" onclick="submitApplication()">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pet Rescue Organization. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to open the application form modal
+        function openApplicationForm(petName) {
+            document.getElementById("petName").innerText = petName; // Set pet's name in the form
+            document.getElementById("adoptionModal").style.display = "flex"; // Show modal
+        }
+
+        // Function to close the application form modal
+        function closeApplicationForm() {
+            document.getElementById("adoptionModal").style.display = "none"; // Hide modal
+        }
+
+        // Function to handle form submission
+        function submitApplication() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name && email && message) {
+                alert("Thank you, " + name + "! Your application for adoption has been submitted.");
+                closeApplicationForm();
+                document.getElementById("adoptionForm").reset(); // Reset form fields
+            } else {
+                alert("Please complete all fields.");
+            }
+        }
+
+        // Close the modal if the user clicks outside the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById("adoptionModal");
+            if (event.target === modal) {
+                closeApplicationForm();
+            }
+        }
+    </script>
+</body>
+</html>
